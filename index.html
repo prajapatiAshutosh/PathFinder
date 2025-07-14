@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinding Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Pathfinding Visualizer</h1>
+    </div>
+
+    <div class="controls">
+        <div class="control-group">
+            <label for="algorithm">Algorithm:</label>
+            <select id="algorithm">
+                <option value="dijkstra">Dijkstra's Algorithm</option>
+                <option value="bfs">Breadth-First Search</option>
+                <option value="dfs">Depth-First Search</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="gridSize">Grid Size:</label>
+            <input type="range" id="gridSize" min="10" max="50" value="25">
+            <span id="gridSizeValue">25x25</span>
+        </div>
+
+        <div class="control-group">
+            <label for="speed">Speed:</label>
+            <input type="range" id="speed" min="1" max="10" value="5">
+            <span id="speedValue">5</span>
+        </div>
+
+        <button class="btn btn-primary" id="startBtn">Start Pathfinding</button>
+        <button class="btn btn-secondary" id="clearPathBtn">Clear Path</button>
+        <button class="btn btn-danger" id="clearAllBtn">Clear All</button>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid" id="grid"></div>
+    </div>
+
+    <div class="stats" id="stats">
+        Click and drag to place walls. Click and drag Start 🚀 or End 🎯 nodes to move them.
+    </div>
+
+    <div class="legend">
+        <div class="legend-item">
+            <div class="legend-color" style="background: #27ae60;"></div>
+            <span>Start Node 🚀</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #e74c3c;"></div>
+            <span>End Node 🎯</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #2c3e50;"></div>
+            <span>Wall</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #3498db;"></div>
+            <span>Visited</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #f39c12;"></div>
+            <span>Shortest Path</span>
+        </div>
+    </div>
+</div>
+
+<script src="scripts.js"></script>
+
+</body>
+</html>
